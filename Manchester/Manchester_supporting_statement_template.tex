@@ -1,0 +1,196 @@
+% PROJECT-SPECIFIC SUPPORTING STATEMENT TEMPLATE
+% Upload to Overleaf as main.tex. Compile with pdfLaTeX.
+% Replace all bracketed text with your own prose.
+% Comments beginning with % will not appear in the PDF.
+% Follow any word/page limit or prompt given in the application portal.
+% The paragraph lengths below are optional drafting guides, not requirements.
+% Use connected paragraphs; the prompts are not submission-ready prose.
+%
+% Project advert checked 15 October 2026:
+% https://www.findaphd.com/phds/project/?p198781
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+
+% ---------- Application details ----------
+\newcommand{\ApplicantName}{Bahar Barghbani}
+\newcommand{\UniversityName}{The University of Manchester}
+\newcommand{\ProjectTitle}{Resource-Efficient Execution of Data Centre-Grade
+Workloads with Lightweight Operating Systems on Emerging Capability Hardware}
+\newcommand{\Supervisors}{Dr Pierre Olivier and Dr Pavlos Petoumenos}
+
+% ---------- Formatting ----------
+\setstretch{1.08}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.7em}
+\setlength{\emergencystretch}{2em}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small\thepage}
+\hypersetup{pdftitle={Supporting Statement},pdfauthor={Bahar Barghbani}}
+
+\begin{document}
+
+\begin{center}
+    {\Large\bfseries Supporting Statement}\par
+    \vspace{0.35em}
+    {\normalsize\bfseries\ApplicantName}\par
+    \vspace{0.25em}
+    {\small\UniversityName}\par
+    \vspace{0.5em}
+    \begin{minipage}{0.95\textwidth}
+        \centering\small\ProjectTitle
+    \end{minipage}\par
+    \vspace{0.35em}
+    {\small Supervisors: \Supervisors}
+\end{center}
+\vspace{0.3em}
+
+% 1. MOTIVATION: approximately 100--130 words.
+% Explain your own intellectual reason for choosing this project.
+% Connect your interest in memory behaviour and performance to the question
+% of how operating-system design can exploit emerging hardware.
+% Introduce your current degree briefly; avoid a long autobiographical opening.
+
+
+I got interested in systems level research in my third semester in Sharif university. 
+During my studies, I found a strong interest in understanding what is happening 
+beneath the software level and how different components of a computer interact and cooperate. Moreover, my 
+background in physics affects this interest in architecture level research, because I 
+feel closer and more connected to it and I find it more physical.
+I am particularly interested in memory focues research and analyzing different mechanisms and innovations 
+in the memory hierarchy to improve the performance of the processor. Furthermore, I also enjoy 
+making use of software driven information to help with the functionality of the hardware. These reasons together are 
+why I am interested in this particular project.
+
+During Computer Sutrcture and Languages course in that semester, I
+became familiar with ISA and Assembely programming. I realized I enjoy understanding the operations 
+beneath the software level. After that and with passing Computer Architecture and 
+Operating Systems courses, I found myself very interested in analyzing 
+the operations and interactions between different components of the computer.
+Therefore, I chose to deepen my understanding by conducting research in the area and I 
+joined Professor Alberto Ros's research at the University of Murcia.
+
+I started working with Prof. Ros since last winter, and I spent 
+some time studying the literature and working on reproducing the 
+results of an already published paper. However, I realized there are some discrepencies between 
+the results and the ones reported in the published paper. After proposing several causes for this issue 
+and collaborating with the PhD student who had worked on the project, we decided to move on and use 
+an extended version of ChampSim, which was developed to include the Entangling Prefetcher.
+Currently, I am working on CVP workload traces to investiaget L2 cache placement 
+for prefetched instructions. Right now, I am trying different 
+policies such as different placement of block heads and block consecutive instructions, 
+making use of the confidence of the entangled pair to decide on the pair's placement and working to add L2 prefetching to the overall mechanism and testing 
+several settings to figure out a better way that works for these traces 
+and outperforms a setting in which all prefetched instructions fill 
+L1I cache.
+
+More about my background, I am a bronze medalist in National Physics Olympiad. 
+I believe, my background in physics was the root of my interest in 
+low-level computer research, because I have a physical sense of what 
+I am doing and what is happenning in the result. After starting my work with 
+Professor Alberto and spending a six-week long on-site internship with 
+Professor Ozcan Ozturk, which involved implementing compute-intensive and 
+memory intensive benchmarks from scratch, as well as studying the state-of-the-art 
+methods of using PMU for performance analysis [name of the papers here as well as changing this claim accordingly].
+
+% Working on developing a specific yet portable kernel sounds exciting to me, because 
+% it envolves an intersection of my research interests and background.
+% Changing the kernel and tackling with paging and address translation is what stands out to me in this 
+% project, because it enables me to work on a broader 
+% [Explain why you want to pursue this particular PhD. Identify the question at
+% the hardware/software interface that interests you, and describe the experience
+% that led you towards it. State why you want to investigate operating-system
+% design as the next step in your research development.]
+My main motivation to pursue a PhD is to dive deeper into working 
+in memory focused research, focusing on cache and front-end of the processor.
+In this project in project in particular, I am most excited about automating 
+prefetching using LLM and using AI. Working in the intersection of Machine Learning and 
+Memory Optimization is a field I can imagine myself working commitedly in.
+
+
+% 2. ACADEMIC AND OS PREPARATION: approximately 90--120 words.
+% Describe your Computer Engineering degree at Sharif and, if useful, your
+% major GPA (19.13/20); verify that it is current before submitting.
+% Select relevant courses and actual work rather than listing every course.
+% Explain what your Operating Systems TA work involved using concrete duties.
+% Discuss virtual memory or process mechanisms only if you actually taught,
+% implemented, or studied them; TA experience does not imply kernel expertise.
+% [Explain your academic preparation for systems research. Give one concrete
+% example from relevant coursework, a project, or your Operating Systems teaching
+% assistantship that demonstrates your understanding and ability to communicate
+% technical ideas. Connect that example to your readiness for this PhD.]
+Through my Computer Architecture course, I became familiar with memory and cache and learnt 
+some of the basic concepts of memory hierarchy. After I was enrolled in the research in 
+Entangling Prefetcher, I developed a strong interest in this area of research and improving 
+processor performance through memory optimization.
+
+
+
+% 3. RESEARCH WITH ALBERTO ROS: approximately 130--170 words.
+% Cover the research question, your individual contribution, experimental
+% method, and one lesson that changed your understanding.
+% Relevant material may include instruction-cache prefetching, ChampSim,
+% Google Sierra workloads, and comparisons of architectural configurations.
+% Explain how you distinguish a proposed optimisation from a true bottleneck.
+% Verify the current scope and status. Do not imply publication or a successful
+% optimisation if the investigation is ongoing. Quantify only verified results.
+% [Describe your research with Prof. Alberto Ros. Explain what you are trying to
+% understand, what you personally implemented or evaluated, and how you compare
+% configurations. Discuss a specific finding, difficulty, or methodological lesson.
+% Show how this experience developed your ability to investigate system behaviour
+% and assess whether an intervention addresses a meaningful bottleneck.]
+
+% 4. PLANNED WORK WITH OZCAN OZTURK: optional, approximately 40--70 words.
+% The research has not properly started. Give it only one or two sentences,
+% or omit it if it does not add useful evidence of your direction.
+% State the planned topic and why it interests you. Mention any preparation
+% only if you have actually completed it, clearly separating it from the plan.
+% Do not claim completed experiments, findings, or skills acquired through
+% this project. Planned work is motivation, not evidence of research achievement.
+% Let your actual contributions with Alberto Ros carry the research argument.
+% [If useful, briefly describe the planned performance-analysis project with
+% Prof. \"Ozcan \"Ozt\"urk and its intended focus. Make its early status explicit.
+% Explain how the topic connects to your developing research interests. Include
+% only preparation you have actually completed; otherwise omit preparation claims.]
+The research with Dr. Ozturk is supposed to start more seriously and beyond preparation
+stages. The research question is whether we can come up with useful metrics dervied by 
+engineering gathered data. The named data is supposed to be gathered from PMU registers.
+% 5. PROJECT FIT: approximately 160--210 words.
+% Choose one or two aspects you can explain clearly in your own words.
+% The advert identifies three directions: process duplication, allocation and
+% compaction, and fine-grained swapping on capability-equipped MMU-less hardware.
+% Explain WHY an aspect interests you; avoid paraphrasing the whole advert.
+% Distinguish your transferable skills from knowledge you want to acquire.
+% Potential questions below are prompts for interest, not claimed research gaps:
+% - What trade-offs might arise when making memory relocation transparent?
+% - How might workload behaviour influence the usefulness of finer granularity?
+% Connect your experience to a plausible contribution, not a promised solution.
+% [Identify one or two aspects of the advertised research that particularly
+% interest you. Explain the design trade-off or question you would like to
+% understand and how your prior work prepares you to investigate it. Describe
+% the OS implementation or capability-architecture knowledge you want to develop,
+% and why working with this supervisory team would support that development.]
+
+% 6. GOALS AND CLOSING: approximately 70--100 words.
+% Give an honest longer-term direction. Close on your preparation and purpose.
+% Avoid generic university rankings, unsupported expertise, or repeating the CV.
+% [Explain your longer-term research or professional goals and how this PhD
+% would help you pursue them. Close by connecting your experimental preparation,
+% interest in systems design, and willingness to learn to the work of the project.]
+
+% BEFORE SUBMISSION:
+% - Remove every bracketed prompt; check all personal facts and project claims.
+% - Keep the full project title and supervisors identifiable.
+% - Check the portal's actual word/page limit and document instructions.
+% - Use \%, \&, \_, and \# for literal LaTeX special characters.
+
+\end{document}
